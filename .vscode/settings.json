@@ -1,0 +1,27 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"  // Only run ESLint on manual save
+  },
+  "javascript.suggestionActions.enabled": false,
+  "typescript.suggestionActions.enabled": false,
+  "json.schemas": [
+  ],
+  "[html]": {
+    "editor.formatOnSave": true,
+  },
+  "[css]": {
+    "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.formatOnSave": true
+  },
+  "html.format.wrapLineLength": 120,
+  "css.format.braceStyle": "collapse",
+  "css.format.enable": true,
+
+  "files.associations": {
+    "*.scss": "scss",
+  },
+  // Rule for Tailwind CSS
+  "scss.lint.unknownAtRules": "ignore"
+}
