@@ -1,0 +1,21 @@
+{
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch via NPM (Vite)",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--host=0.0.0.0", "--port=3000"],
+      "restart": true,
+      "sourceMaps": true,
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "env": {
+        "NODE_ENV": "development",
+      },
+      "presentation": {
+        "hidden": false,
+      }
+    },
+  ]
+}
