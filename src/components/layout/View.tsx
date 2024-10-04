@@ -3,7 +3,7 @@ import Footer from './Footer';
 
 function View ({ children }:{ children:React.ReactNode }) {
   return (
-    <div className="view flex-auto flex flex-col">
+    <div className="flex-auto flex flex-col">
       <Header />
       {children}
       <Footer />
