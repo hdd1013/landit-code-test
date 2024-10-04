@@ -11,18 +11,26 @@ function LanditRadio ({ name, value, id, className, onChange, style, checked, di
   disabled?:boolean,
 }) {
   return (
-    <input type="radio"
-      name={name}
-      id={id}
-      value={value}
-      className={`${styleSheet.radio} ${className}`}
-      onChange={onChange}
-      checked={checked}
-      disabled={disabled}
-      style={{
-        ...style,
-      }}
-    />
+    <>
+      <input type="radio"
+        name={name}
+        id={id}
+        value={value}
+        className={`${styleSheet.radio} ${className}`}
+        onChange={onChange}
+        checked={checked}
+        disabled={disabled}
+        style={{
+          display: 'none',
+        }}
+      />
+      <div
+        className={`${styleSheet.radio} ${className}`}
+        style={{
+          ...style,
+        }}>
+      </div>
+    </>
   );
 }
 

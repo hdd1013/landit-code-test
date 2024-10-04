@@ -1,46 +1,47 @@
-.radio {
-  appearance: "none";
-  width: 1.5rem;
-  height: 1.5rem;
-  transition: all 0.2s ease-in-out;
-  display: block;
-  position: relative;
-  border: 1px solid black;
-  border-radius: 50%;
-  &::after {
-    transition: all 0.2s ease-in-out;
-    content: "";
+input[type="radio"] {
+  & + .radio {
     display: block;
-    position: absolute !important;
-    background-color: transparent;
+    // appearance: "none";
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: all 0.2s ease-in-out;
+    position: relative;
     border-radius: 50%;
-    width: 0.875rem;
-    height: 0.875rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    &::after {
+      content: "";
+      transition: all 0.2s ease-in-out;
+      display: block;
+      position: absolute !important;
+      background-color: transparent;
+      border-radius: 50%;
+      width: 0.875rem;
+      height: 0.875rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    @apply border border-border bg-form-background;
   }
 
-  @apply border-border bg-form-background;
-  &:hover {
+  &:hover + .radio {
     @apply border-text bg-form-background;
   }
-  &:checked {
+  &:checked + .radio {
     @apply border-text-link bg-text-link-light;
     &::after {
       @apply bg-text-link;
     }
   }
-  &:checked:hover {
+  &:checked:hover + .radio {
     @apply border-text-link-dark bg-text-link-light;
     &::after {
       @apply bg-text-link-dark;
     }
   }
-  &:disabled,
-  &:disabled:hover,
-  &:disabled:checked,
-  &:disabled:checked:hover {
+  &:disabled + .radio,
+  &:disabled:hover + .radio,
+  &:disabled:checked + .radio,
+  &:disabled:checked:hover + .radio {
     @apply bg-form-background-disabled border-form-background-disabled;
     &::after {
       @apply bg-transparent;

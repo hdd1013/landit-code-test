@@ -8,6 +8,7 @@ import Title from './components/Title';
 
 import LanditButton from './components/input/LanditButton';
 
+import LanditField from './components/form/LanditField';
 import LanditSelect from './components/input/LanditSelect';
 import LanditRadio from './components/input/LanditRadio';
 
@@ -37,58 +38,50 @@ function App () {
                   </div>
                   {/* Form body */}
                   <div className="flex flex-col w-full">
-                    <div className="flex flex-row py-[1.5rem] items-center min-h-10 pr-0.5 border-t border-border">
-                      <div className='w-[4.5rem] text-sm flex flex-row items-center'>
-                        <FontAwesomeIcon icon={faLocationDot} className='mr-1'/>
-                        <span>場所</span>
+                    <LanditField
+                      icon={faLocationDot}
+                      label='場所'
+                    >
+                      <LanditSelect className='h-10' options={[
+                        { key:'1', value: '1', text: '東京都' },
+                      ]}/>
+                    </LanditField>
+                    <LanditField
+                      icon={faCalendarCheck}
+                      label='年度'
+                    >
+                      <LanditSelect className='h-10' options={[
+                        { key:'1', value: '1', text: '東京都' },
+                      ]}/>
+                    </LanditField>
+                    <LanditField
+                      icon={faShapes}
+                      label='種類'
+                      labelAlign='top'
+                    >
+                      <div className="-my-3">
+                        <label className='flex flex-row my-3'>
+                          <LanditRadio name="type" className='mr-2' value="res"/>
+                          <span className='text-sm'>土地（住宅地）</span>
+                        </label>
+                        <label className='flex flex-row my-3'>
+                          <LanditRadio name="type" className='mr-2' value="com"/>
+                          <span className='text-sm'>土地（商業地）</span>
+                        </label>
+                        <label className='flex flex-row my-3'>
+                          <LanditRadio name="type" className='mr-2' value="man"/>
+                          <span className='text-sm'>中古マンション等</span>
+                        </label>
+                        <label className='flex flex-row my-3'>
+                          <LanditRadio name="type" className='mr-2' value="frm"/>
+                          <span className='text-sm'>農地</span>
+                        </label>
+                        <label className='flex flex-row my-3'>
+                          <LanditRadio name="type" className='mr-2' value="grn"/>
+                          <span className='text-sm'>林地</span>
+                        </label>
                       </div>
-                      <div className="flex flex-col flex-auto min-h-10">
-                        <LanditSelect className='h-10' options={[
-                          { key:'1', value: '1', text: '東京都' },
-                        ]}/>
-                      </div>
-                    </div>
-                    <div className="flex flex-row py-[1.5rem] items-center min-h-10 pr-0.5 border-t border-border">
-                      <div className='w-[4.5rem] h-10 text-sm flex flex-row items-center'>
-                        <FontAwesomeIcon icon={faCalendarCheck} className='mr-1'/>
-                        <span>年度</span>
-                      </div>
-                      <div className="flex flex-col flex-auto min-h-10">
-                        <LanditSelect className='h-10' options={[
-                          { key:'1', value: '1', text: '東京都' },
-                        ]}/>
-                      </div>
-                    </div>
-                    <div className="flex flex-row py-[1.5rem] items-start min-h-10 pr-0.5 border-t border-border">
-                      <div className='w-[4.5rem] text-sm flex flex-row items-center'>
-                        <FontAwesomeIcon icon={faShapes} className='mr-1'/>
-                        <span>種類</span>
-                      </div>
-                      <div className="flex flex-col flex-auto min-h-10">
-                        <div className="-my-3">
-                          <label className='flex flex-row my-3'>
-                            <LanditRadio name="type" className='mr-2' value="res"/>
-                            <span className='text-sm'>土地（住宅地）</span>
-                          </label>
-                          <label className='flex flex-row my-3'>
-                            <LanditRadio name="type" className='mr-2' value="com"/>
-                            <span className='text-sm'>土地（商業地）</span>
-                          </label>
-                          <label className='flex flex-row my-3'>
-                            <LanditRadio name="type" className='mr-2' value="man"/>
-                            <span className='text-sm'>中古マンション等</span>
-                          </label>
-                          <label className='flex flex-row my-3'>
-                            <LanditRadio name="type" className='mr-2' value="frm"/>
-                            <span className='text-sm'>農地</span>
-                          </label>
-                          <label className='flex flex-row my-3'>
-                            <LanditRadio name="type" className='mr-2' value="grn"/>
-                            <span className='text-sm'>林地</span>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
+                    </LanditField>
                   </div>
                 </div>
                 <div className="flex flex-row">
