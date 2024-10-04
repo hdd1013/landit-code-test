@@ -1,4 +1,4 @@
-import backgroundImage from '../../assets/background.webp';
+import backgroundImage from '../assets/background.webp';
 
 function Body ({ children }:{ children:React.ReactNode }) {
   return (

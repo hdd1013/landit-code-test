@@ -1,5 +1,5 @@
-import logo from '../../assets/logo-landit.png';
-import logo2x from '../../assets/logo-landit@2x.png';
+import logo from '../assets/logo-landit.png';
+import logo2x from '../assets/logo-landit@2x.png';
 
 function Logo () {
   return (
