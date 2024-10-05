@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import { faSquarePollVertical, faLocationDot, faCalendarCheck, faShapes } from '@fortawesome/free-solid-svg-icons';
 
 import View from './components/View';
@@ -13,7 +15,19 @@ import LanditRadio from './components/input/LanditRadio';
 
 import LanditGraph from './components/LanditGraph';
 
+import { get as getAreas } from './models/areaModel';
+
 function App () {
+  const [areas, setAreas] = useState(null);
+
+  useEffect(()=>{
+    if (areas === null) {
+      getAreas().then((data)=>{
+        setAreas(data);
+      });
+    }
+    console.log(areas);
+  }, [areas, setAreas]);
 
   return (
     <View>
