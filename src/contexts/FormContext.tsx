@@ -6,7 +6,6 @@ import {
 import localforage from 'localforage';
 
 import { get as getPrefectures } from '../models/prefectureModel';
-import { get as getEstatePrices } from '../models/estatePriceModel';
 import { formYearOptions, formPurposeOptions } from '../models/formOptionModel';
 import { IResasPrefectureData } from '../interfaces/IResasPrefectureData';
 import { IFormData } from '../interfaces/IFormData';
