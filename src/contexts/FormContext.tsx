@@ -1,3 +1,6 @@
+// Form Context
+// Takes care of the form data and form options
+// Formデータとフォームオプションを管理
 import {
   useState, useMemo, useEffect, useCallback, createContext,
   Dispatch, SetStateAction,
