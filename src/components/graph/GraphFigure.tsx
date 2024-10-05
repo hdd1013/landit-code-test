@@ -23,18 +23,38 @@ function Figure ({ target, national, maxValue, measureInterval }:{
       borderWidth: '0 0 1px 1px',
       padding: '0 69px',
     }}>
-      <GraphNode
-        label={target.name}
-        value={target.value}
-        maxHeight={maxGraphHeight}
-        type="target"
-      />
-      <GraphNode
-        label={national.name}
-        value={national.value}
-        maxHeight={maxGraphHeight}
-        type="national"
-      />
+      {
+        target.value >= 0 && national.value >= 0
+          ? (<>
+            <GraphNode
+              label={target.name}
+              value={target.value}
+              maxHeight={maxGraphHeight}
+              type="target"
+            />
+            <GraphNode
+              label={national.name}
+              value={national.value}
+              maxHeight={maxGraphHeight}
+              type="national"
+            />
+          </>)
+          : (
+            // データが有効でない場合はメッセージを表示
+            <div
+              className={`
+              absolute top-1/2 -translate-y-1/2
+              p-8 flex flex-col justify-center items-center
+              bg-black bg-opacity-10
+              rounded-md
+            `}
+            >
+              <div className="text-center text-white text-sm">
+                データがありません。
+              </div>
+            </div>
+          )
+      }
     </div>
   );
 }

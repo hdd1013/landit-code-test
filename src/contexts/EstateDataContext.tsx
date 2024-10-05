@@ -96,6 +96,8 @@ const EstateDataProvider = ({ children }:{ children:React.ReactNode }) => {
     // Update the state
     // stateを更新
     if (targetData === null || nationalData === null) {
+      setPriceValue(()=> -1);
+      setNationalPriceValue(()=> -1);
       return;
     }
     setPrefName(()=>targetData.prefName);
