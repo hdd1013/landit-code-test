@@ -4,11 +4,14 @@ import App from './App.tsx';
 import './index.scss';
 
 import { FormProvider } from './contexts/FormContext.tsx';
+import { EstateDataProvider } from './contexts/EstateDataContext.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <FormProvider>
-      <App />
+      <EstateDataProvider>
+        <App />
+      </EstateDataProvider>
     </FormProvider>
   </StrictMode>,
 );

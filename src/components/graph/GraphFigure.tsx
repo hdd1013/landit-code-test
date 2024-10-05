@@ -38,7 +38,7 @@ function Figure ({ target, national, maxValue }:{
   );
 }
 
-function GraphFigure ({ data }:{ data:IGraphData }) {
+function GraphFigure ({ data }:{ data:Pick<IGraphData, 'target' | 'national'> }) {
   const maxValue = useMemo(()=>Math.max(
     data.target.value,
     data.national.value,

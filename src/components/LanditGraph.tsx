@@ -1,10 +1,12 @@
-import { IGraphData } from '../interfaces/IGraphData';
+import { useContext } from 'react';
 
 import GraphHeader from './graph/GraphHeader';
 import GraphFigure from './graph/GraphFigure';
 
+import EstateDataContext from '../contexts/EstateDataContext';
 
-function LanditGraph ({ data }:{ data:IGraphData }) {
+
+function LanditGraph () {
   /*
     Draw the graph
     Since it's a simple graph, we won't use any library
@@ -18,17 +20,29 @@ function LanditGraph ({ data }:{ data:IGraphData }) {
     スペーサーとして一番上に空白盛りを追加します。
   */
 
+  const { prefName, purposeName, year, priceValue, nationalValue } =
+    useContext(EstateDataContext);
+
   return (
     <div className="graph relative flex flex-col" style={{
       // デザインに合わせて整列
       margin: '1.4rem 1.6rem 0 0px',
     }}>
       <GraphHeader
-        area={data.target.name}
-        year={data.year}
-        purpose={data.purpose}
+        area={prefName}
+        year={Number(year)}
+        purpose={purposeName}
       />
-      <GraphFigure data={data}/>
+      <GraphFigure data={{
+        target: {
+          name: prefName,
+          value: priceValue,
+        },
+        national: {
+          name: '全国平均',
+          value: nationalValue,
+        },
+      }}/>
     </div>
   );
 }

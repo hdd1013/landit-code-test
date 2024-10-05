@@ -93,7 +93,14 @@ const EstateDataProvider = ({ children }:{ children:React.ReactNode }) => {
         displayType: optionData.purpose,
       }),
     ]);
-    // TODO:Update the state
+    // Update the state
+    // stateを更新
+    if (targetData === null || nationalData === null) {
+      return;
+    }
+    setPrefName(()=>targetData.prefName);
+    setPriceValue(()=>targetData.years[0]?.value ?? -1);
+    setNationalPriceValue(()=>nationalData.years[0]?.value ?? -1);
   }, [optionData, setPrefName, setPriceValue, setNationalPriceValue]);
 
   // optionDataが更新されるとAPIからデータを取得

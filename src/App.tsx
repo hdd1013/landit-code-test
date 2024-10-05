@@ -24,12 +24,7 @@ function App () {
             <div className="flex items-center justify-center" style={{
               gridArea: 'g',
             }}>
-              <LanditGraph data={{
-                year: 2022,
-                purpose: '土地（住宅地）',
-                target: { name: '東京都', value: 58500 },
-                national: { name: '全国平均', value: 42680 },
-              }}/>
+              <LanditGraph />
             </div>
             <div className="flex flex-col pl-2" style={{
               gridArea: 'f',
