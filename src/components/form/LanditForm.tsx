@@ -8,7 +8,7 @@ import {
 import LanditField from './LanditField';
 import LanditSelect, { ILanditSelectOption } from '../input/LanditSelect';
 import LanditRadio from '../input/LanditRadio';
-import LanditButton from '../input/LanditButton';
+import DownloadButton from './DownloadButton';
 
 import FormContext from '../../contexts/FormContext';
 
@@ -95,7 +95,7 @@ function FormBody () {
       </LanditField>
     </div>
     <div className="flex flex-row">
-      <LanditButton className='flex-auto text-base py-4 h-[3.25rem]'>データをダウンロード</LanditButton>
+      <DownloadButton />
     </div>
   </>);
 }
