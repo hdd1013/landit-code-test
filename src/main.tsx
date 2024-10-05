@@ -3,8 +3,12 @@ import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.scss';
 
+import { FormProvider } from './contexts/FormContext.tsx';
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <FormProvider>
+      <App />
+    </FormProvider>
   </StrictMode>,
 );
