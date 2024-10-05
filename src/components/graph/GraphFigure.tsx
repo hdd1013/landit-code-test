@@ -52,10 +52,12 @@ function GraphFigure ({ data }:{ data:Pick<IGraphData, 'target' | 'national'> })
     // 5000から始めて5000ずつ増やす
     let interval = 5000;
     let measureCount = 0;
-    do {
-      measureCount = Math.floor(maxValue / interval) + 1;
+    measureCount = Math.floor(maxValue / interval) + 1;
+    while (measureCount > 15) {
       interval += 5000;
-    } while (measureCount > 15);
+      measureCount = Math.floor(maxValue / interval) + 1;
+    }
+
     return interval;
   }, [data]);
 
