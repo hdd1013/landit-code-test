@@ -12,6 +12,8 @@ import LanditField from './components/form/LanditField';
 import LanditSelect from './components/input/LanditSelect';
 import LanditRadio from './components/input/LanditRadio';
 
+import LanditGraph from './components/LanditGraph';
+
 function App () {
 
   return (
@@ -24,9 +26,14 @@ function App () {
           <div className="w-100 grid flex-auto" style={{
             gridTemplate: '"g f" 1fr / 1fr 20%',
           }}>
-            <div className="text-white" style={{
+            <div className="flex items-center justify-center" style={{
               gridArea: 'g',
-            }}>Graph</div>
+            }}>
+              <LanditGraph data={{
+                target: { name: '東京都', value: 58500 },
+                national: { name: '全国平均', value: 42680 },
+              }}/>
+            </div>
             <div className="flex flex-col pl-2" style={{
               gridArea: 'f',
             }}>
