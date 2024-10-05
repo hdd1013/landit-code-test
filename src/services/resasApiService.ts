@@ -1,12 +1,15 @@
 // Fetches data from the RESAS API
 
-const resasApiService = (action:string, params:Record<string, string>) => {
+const resasApiService = (action:string, params:Record<string, string | undefined>) => {
   const headers = {
     'method': 'GET',
     'Content-Type': 'application/json;charset=UTF-8',
   };
   let apiUrl = `/api/${action}`;
-  const query = Object.entries(params).map(([key, value])=>`${key}=${value}`).join('&');
+  const query = Object.entries(params)
+    .filter(([, value])=>value !== undefined)
+    .map(([key, value])=>`${key}=${value}`)
+    .join('&');
   if (query.length) {
     apiUrl += `?${query}`;
   };
