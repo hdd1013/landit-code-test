@@ -123,7 +123,6 @@ function LanditForm () {
             <span className="text-sm">ロード中</span>
           </div>
       }
-
     </div>
   );
 }

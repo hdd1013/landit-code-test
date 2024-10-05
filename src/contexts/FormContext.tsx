@@ -73,10 +73,6 @@ function FormProvider ({ children }:{ children:React.ReactNode }) {
     localforage.setItem(cacheKey, fetchedData);
   }, [prefectures, getPrefectures]);
 
-  useEffect(()=>{
-    console.log(formData);
-  }, [formData]);
-
   const values = useMemo(() => ({
     prefectures,
     years,
@@ -90,15 +86,12 @@ function FormProvider ({ children }:{ children:React.ReactNode }) {
   ]);
 
   // Effects
+  // コンテキストを初期化
   useEffect(()=>{
     if (prefectures === null) {
       updatePrefectures();
-      getEstatePrices({ prefCode:'13', year:'2021', displayType:'1' })
-        .then(res=>console.log(res));
     }
-    console.log(prefectures);
-
-  }, [prefectures, setPrefectures]);
+  }, [prefectures, updatePrefectures]);
 
   return (
     <FormContext.Provider value={values}>
