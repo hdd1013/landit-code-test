@@ -4,13 +4,14 @@ import { IGraphData } from '../../interfaces/IGraphData';
 import GraphNode from './GraphNode';
 import Measures from './Measures';
 
-function Figure ({ target, national, maxValue }:{
+function Figure ({ target, national, maxValue, measureInterval }:{
   target:IGraphData['target'],
   national:IGraphData['national'],
   maxValue:number,
+  measureInterval:number,
 }) {
   const maxGraphHeight = useMemo(()=>
-    (Math.ceil(maxValue / 5000) + 1) * 5000
+    (Math.ceil(maxValue / measureInterval) + 1) * measureInterval
   , [maxValue]);
   return (
     <div className="graph-main flex flex-row justify-around" style={{
@@ -44,6 +45,20 @@ function GraphFigure ({ data }:{ data:Pick<IGraphData, 'target' | 'national'> })
     data.national.value,
   ), [data]);
 
+  const measureInterval = useMemo(()=>{
+    // Calculate the interval of the measures so that they
+    // are not drawn too crowded.
+    // 目盛りが密集しすぎないように、目盛りの間隔を調整
+    // 5000から始めて5000ずつ増やす
+    let interval = 5000;
+    let measureCount = 0;
+    do {
+      measureCount = Math.floor(maxValue / interval) + 1;
+      interval += 5000;
+    } while (measureCount > 15);
+    return interval;
+  }, [data]);
+
   return (
     <div className="w-100 flex-auto graph-figure relative" style={{
       // 目盛りが表示させる空間を確保
@@ -57,11 +72,15 @@ function GraphFigure ({ data }:{ data:Pick<IGraphData, 'target' | 'national'> })
       }}>
         <span className="break-keep text-nowrap whitespace-nowrap">{'(円/㎡)'}</span>
       </div>
-      <Measures maxValue={Math.max(data.target.value, data.national.value)}/>
+      <Measures
+        maxValue={Math.max(data.target.value, data.national.value)}
+        measureInterval={measureInterval}
+      />
       <Figure
         target={data.target}
         national={data.national}
         maxValue={maxValue}
+        measureInterval={measureInterval}
       />
     </div>
   );

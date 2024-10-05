@@ -19,6 +19,13 @@ function LanditGraph () {
     目盛りは5000円刻みで生成します。
     スペーサーとして一番上に空白盛りを追加します。
   */
+  /*
+    Update:
+    If the price is too high, resulting in too many measures,
+    increase the interval by 5,000.
+    ========================================
+    価格が高すぎて目盛りが多すぎる場合は、 5000円刻みで間隔を広げます。
+  */
 
   const { prefName, purposeName, year, priceValue, nationalValue } =
     useContext(EstateDataContext);

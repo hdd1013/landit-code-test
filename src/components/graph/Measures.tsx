@@ -28,18 +28,22 @@ function MeasureMark ({ value, yPosition }:{ value:string, yPosition:number }) {
   );
 }
 
-function Measures ({ maxValue }:{ maxValue:number }) {
+function Measures ({ maxValue, measureInterval }:{
+  maxValue:number, measureInterval:number
+}) {
   // 目盛のデータ
   const measures = useMemo(()=>{
     const measureList = [];
+    const interval = measureInterval;
+
     let v = 0;
     while (v < maxValue) {
       measureList.push(v);
-      v += 5000;
+      v += interval;
     }
     measureList.push(v);
     return measureList;
-  }, [maxValue]);
+  }, [maxValue, measureInterval]);
 
   return (
     <div className="graph-measures absolute" style={{
