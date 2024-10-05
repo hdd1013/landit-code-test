@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 
-import GraphHeader from './graph/GraphHeader';
-import GraphFigure from './graph/GraphFigure';
+import GraphHeader from './GraphHeader';
+import GraphFigure from './GraphFigure';
 
-import EstateDataContext from '../contexts/EstateDataContext';
+import EstateDataContext from '../../contexts/EstateDataContext';
 
 
 function LanditGraph () {

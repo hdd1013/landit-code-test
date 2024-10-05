@@ -1,14 +1,12 @@
-import { useContext } from 'react';
-
 import { faSquarePollVertical } from '@fortawesome/free-solid-svg-icons';
 
 import View from './components/View';
 import Body from './components/Body';
 import Title from './components/Title';
 
-import LanditGraph from './components/LanditGraph';
+import LanditGraph from './components/graph/LanditGraph';
 
-import LanditForm from './components/LanditForm';
+import LanditForm from './components/form/LanditForm';
 
 function App () {
   return (

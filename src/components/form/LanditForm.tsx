@@ -5,14 +5,14 @@ import {
   faLocationDot, faCalendarCheck, faShapes, faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
 
-import LanditField from './form/LanditField';
-import LanditSelect, { ILanditSelectOption } from './input/LanditSelect';
-import LanditRadio from './input/LanditRadio';
-import LanditButton from './input/LanditButton';
+import LanditField from './LanditField';
+import LanditSelect, { ILanditSelectOption } from '../input/LanditSelect';
+import LanditRadio from '../input/LanditRadio';
+import LanditButton from '../input/LanditButton';
 
-import FormContext from '../contexts/FormContext';
+import FormContext from '../../contexts/FormContext';
 
-import { IFormData } from '../interfaces/IFormData';
+import { IFormData } from '../../interfaces/IFormData';
 
 
 function FormBody () {
