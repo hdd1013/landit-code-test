@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquarePollVertical, faLocationDot, faCalendarCheck, faShapes } from '@fortawesome/free-solid-svg-icons';
 
 import View from './components/View';
@@ -30,6 +29,8 @@ function App () {
               gridArea: 'g',
             }}>
               <LanditGraph data={{
+                year: 2022,
+                purpose: '土地（住宅地）',
                 target: { name: '東京都', value: 58500 },
                 national: { name: '全国平均', value: 42680 },
               }}/>

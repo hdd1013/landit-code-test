@@ -11,7 +11,7 @@ function MeasureMark ({ value, yPosition }:{ value:string, yPosition:number }) {
       <span className="block absolute text-xs leading-none" style={{
         bottom: '50%',
         right: '0.5rem',
-        paddingRight: '0.25rem',
+        paddingRight: '0.5rem',
         transform: 'translateY(50%)',
         marginBottom: '0.1rem',
       }}>{value}</span>
@@ -29,6 +29,7 @@ function MeasureMark ({ value, yPosition }:{ value:string, yPosition:number }) {
 }
 
 function Measures ({ maxValue }:{ maxValue:number }) {
+  // 目盛のデータ
   const measures = useMemo(()=>{
     const measureList = [];
     let v = 0;
@@ -39,6 +40,7 @@ function Measures ({ maxValue }:{ maxValue:number }) {
     measureList.push(v);
     return measureList;
   }, [maxValue]);
+
   return (
     <div className="graph-measures absolute" style={{
       height: '100%',
@@ -50,7 +52,7 @@ function Measures ({ maxValue }:{ maxValue:number }) {
           <MeasureMark key={v} value={v.toLocaleString()} yPosition={100 / array.length * i}/>
         );
       })}
-      {/* Additional grid mark for spacing */}
+      {/* 最上部の空白目盛り */}
       <MeasureMark value="" yPosition={100}/>
     </div>
   );
