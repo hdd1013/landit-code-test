@@ -18,8 +18,8 @@ function Link ({ href, text }:{ href:string, text:string }) {
 function FooterNav () {
   return (
     <div className="flex flex-row -mx-3">
-      <Link href="#" text="利用規約" />
-      <Link href="#" text="プライバシーポリシー" />
+      <Link href="https://landit.co.jp/terms" text="利用規約" />
+      <Link href="https://landit.co.jp/privacypolicy" text="プライバシーポリシー" />
     </div>
   );
 }
