@@ -4,7 +4,7 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 function Title ({ icon, title, subtitle }:{ icon?:IconDefinition, title:string, subtitle?:string }) {
   return (
-    <div className="flex flex-col p-10 pb-0">
+    <div className="app-page-title flex flex-col p-10 pb-0">
       <div className="flex-0 pb-5 flex border-b border-white border-opacity-20">
         <div className="flex flex-row text-white items-end">
           <div className="flex flex-row items-center mt-1 leading-none">

@@ -31,7 +31,7 @@ function LanditGraph () {
     useContext(EstateDataContext);
 
   return (
-    <div className="graph relative flex flex-col" style={{
+    <div className="app-graph relative flex flex-col" style={{
       // デザインに合わせて整列
       margin: '1.4rem 1.6rem 0 0px',
     }}>

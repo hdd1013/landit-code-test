@@ -106,7 +106,7 @@ function LanditForm () {
   } = useContext(FormContext);
 
   return (
-    <div className="w-100 flex-auto p-6 flex flex-col bg-primary-light">
+    <div className="app-form w-100 flex-auto p-6 flex flex-col bg-primary-light">
       {/* Form Header */}
       <div className="w-full pt-[3px] pb-7 leading-none">
         表示内容を選択

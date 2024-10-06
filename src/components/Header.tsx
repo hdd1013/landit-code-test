@@ -13,7 +13,7 @@ function Logo () {
 
 function Header () {
   return (
-    <header className="bg-white flex items-center h-[74px]">
+    <header data-testid="header" className="bg-white flex items-center h-[74px]">
       <Logo />
     </header>
   );
