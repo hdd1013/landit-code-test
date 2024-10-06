@@ -105,3 +105,5 @@ function FormProvider ({ children }:{ children:React.ReactNode }) {
 export default FormContext;
 
 export { FormProvider };
+
+export type { IFormContext };
