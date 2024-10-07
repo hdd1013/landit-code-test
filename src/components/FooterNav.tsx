@@ -3,7 +3,7 @@ import { faWindowRestore } from '@fortawesome/free-regular-svg-icons';
 
 function Link ({ href, text }:{ href:string, text:string }) {
   return (
-    <div className="text-xs text-white leading-none mx-3">
+    <div className="app-footer-link text-xs text-white leading-none mx-3">
       <a href={href} className="" target='_self'>
         {text}
       </a>
@@ -17,7 +17,7 @@ function Link ({ href, text }:{ href:string, text:string }) {
 
 function FooterNav () {
   return (
-    <div className="flex flex-row -mx-3">
+    <div className="app-footer-nav flex flex-row -mx-3">
       <Link href="https://landit.co.jp/terms" text="利用規約" />
       <Link href="https://landit.co.jp/privacypolicy" text="プライバシーポリシー" />
     </div>

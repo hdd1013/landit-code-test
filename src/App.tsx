@@ -10,7 +10,7 @@ import LanditForm from './components/form/LanditForm';
 
 function App () {
   return (
-    <View>
+    <View testId='view'>
       <Body>
         {/* Body Title */}
         <Title icon={faSquarePollVertical} title="取引価格" subtitle="※取引面積1㎡あたり" />
@@ -35,5 +35,6 @@ function App () {
     </View>
   );
 }
+
 
 export default App;

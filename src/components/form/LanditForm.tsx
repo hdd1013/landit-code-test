@@ -31,7 +31,7 @@ function FormBody () {
     }));
   }, [formData, setFormData]);
   return (<>
-    <div className="flex-auto flex flex-col w-full">
+    <div data-testid="formbody" className="flex-auto flex flex-col w-full">
       <LanditField
         icon={faLocationDot}
         label='場所'
@@ -106,7 +106,9 @@ function LanditForm () {
   } = useContext(FormContext);
 
   return (
-    <div className="w-100 flex-auto p-6 flex flex-col bg-primary-light rounded">
+    <div className="app-form w-100 flex-auto p-6 flex flex-col bg-primary-light rounded"
+      data-testid="form"
+    >
       {/* Form Header */}
       <div className="w-full pt-[3px] pb-7 leading-none">
         表示内容を選択
@@ -118,7 +120,7 @@ function LanditForm () {
       {
         formOptionsReady
           ? <FormBody />
-          : <div className="flex-auto flex flex-col items-center justify-center text-text-grey">
+          : <div data-testid="formbody-loading" className="flex-auto flex flex-col items-center justify-center text-text-grey">
             <FontAwesomeIcon icon={faSpinner} className="text-lg mb-4" spin />
             <span className="text-sm">ロード中</span>
           </div>
