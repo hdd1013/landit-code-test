@@ -73,6 +73,7 @@ function FormProvider ({ children }:{ children:React.ReactNode }) {
     // and set the data in the state
     // データを取得したら、Localforageに保存して、stateにセット
     localforage.setItem(cacheKey, fetchedData);
+    setPrefectures(fetchedData);
   }, [prefectures, getPrefectures]);
 
   const values = useMemo(() => ({
