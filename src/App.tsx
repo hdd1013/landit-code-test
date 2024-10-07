@@ -17,7 +17,7 @@ function App () {
         {/* Body Content */}
         <div className="p-10 flex-auto flex flex-col">
           <div className="w-100 grid flex-auto" style={{
-            gridTemplate: '"g f" 1fr / 1fr 20%',
+            gridTemplate: '"g f" 1fr / 1fr minmax(368px, 20%)',
           }}>
             <div className="flex items-center justify-center" style={{
               gridArea: 'g',
